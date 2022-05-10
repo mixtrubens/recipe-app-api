@@ -9,10 +9,10 @@ ENV PYTHONUNBUFFERED 1
 #Irá copiar as bibliotecas escritas no arquivo txt.
 COPY ./requirements.txt /requirements.txt
 #Instala as bibliotecas copiadas
-RUN pip install -r /requirements
+RUN pip install -r /requirements.txt
 #Cria a pasta APP
-RUN mkdir /
-#Defini app como diretório principal.
+RUN mkdir /app
+#Define app como diretório principal.
 WORKDIR /app
 COPY ./app /app
 #criação de um usuário apenas para executar o
