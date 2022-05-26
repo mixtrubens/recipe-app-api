@@ -14,8 +14,8 @@ class AdminSiteTests(TestCase):
         )
         self.client.force_login(self.admin_user)
         self.user = get_user_model().objects.create_user(
-            email='megapixmode@gmail.com',
-            password='123@@mudar',
+            email='test@londonappdev.com',
+            password='password123',
             name='Test User Full Name',
         )
 
@@ -33,9 +33,3 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
-
-    def test_create_user_page(self):
-            """Test that the create user page works"""
-            url = reverse('admin:core_user_add')
-            res = self.client.get(url)
-            self.assertEqual(res.status_code, 200)
